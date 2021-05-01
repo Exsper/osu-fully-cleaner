@@ -263,7 +263,7 @@ namespace osu_cleaner
             this.Controls.Add(this.directoryLabel);
             this.Controls.Add(this.elementList);
             this.Name = "MainApp";
-            this.Text = "osu! Fully Cleaner v1.06";
+            this.Text = "osu! Fully Cleaner v1.1";
             this.Load += new System.EventHandler(this.MainApp_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
