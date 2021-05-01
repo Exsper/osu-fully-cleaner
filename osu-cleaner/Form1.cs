@@ -238,6 +238,8 @@ namespace osu_cleaner
             bool isKeepWav = wavFileKeepCheckbox.Checked;
             foreach (string d in songsfolders)
             {
+                // skip the tooooo looonngggg file path
+                if (d.Length > 100) continue;
                 // get audio and BG
                 List<string> bgs = new List<string>();
                 List<string> audios = new List<string>();
