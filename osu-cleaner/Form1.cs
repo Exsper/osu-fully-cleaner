@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
+using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using Microsoft.VisualBasic.FileIO;
@@ -15,12 +16,12 @@ namespace osu_cleaner
 {
     public partial class MainApp : Form
     {
-        private List<string> skinElements = new List<string>();
-        private List<string> hitSounds = new List<string>();
+        List<string> deletelist = new List<string>();
+        List<string> replacelist = new List<string>();
+
         BackgroundWorker worker;
         private long filesSize = 0;
         private long forRemovalSize = 0;
-        private List<string> foundElements = new List<string>();
 
         public MainApp()
         {
@@ -30,7 +31,6 @@ namespace osu_cleaner
         private void MainApp_Load(object sender, EventArgs e)
         {
             directoryPath.Text = getOsuPath();
-            setSkinList();
             worker = new BackgroundWorker();
             worker.DoWork += new DoWorkEventHandler(findElements);
             worker.ProgressChanged += new ProgressChangedEventHandler(progressBar);
@@ -62,6 +62,7 @@ namespace osu_cleaner
 
         private void findButton_Click(object sender, EventArgs e)
         {
+            if (!directoryPath.Text.EndsWith("\\")) directoryPath.Text = directoryPath.Text + "\\";
             FindProgressBar.Visible = true;
             cancelButton.Visible = true;
             elementList.Items.Clear();
@@ -85,6 +86,7 @@ namespace osu_cleaner
                 delete.Add(file);
             if (moveCheckBox.Checked) Directory.CreateDirectory(directoryPath.Text + "Cleaned");
 
+            // step1: remove files
             foreach (string file in delete)
             {
                 try
@@ -107,6 +109,56 @@ namespace osu_cleaner
                 elementList.Items.Remove(file);
                 filesSizeLabel.Text = "Found: " + Math.Round((double)(filesSize) / 1048576, 4) + " MB";
             }
+
+            // step2: replace files
+            if (backgroundReplaceCheckBox.Checked)
+            {
+                filesSizeLabel.Text = "Replacing...";
+                string png = AppDomain.CurrentDomain.BaseDirectory + "replace\\bg.png";
+                string bmp = AppDomain.CurrentDomain.BaseDirectory + "replace\\bg.bmp";
+                string jpg = AppDomain.CurrentDomain.BaseDirectory + "replace\\bg.jpg";
+                List<string> replace = new List<string>();
+                foreach (string file in replacelist)
+                {
+                    if (delete.Contains(file))
+                    {
+                        replace.Add(file);
+                    }
+                }
+                foreach (string file in replace)
+                {
+                    if (Regex.IsMatch(file, "png$"))
+                    {
+                        File.Copy(png, file);
+                    }
+                    else if (Regex.IsMatch(file, "bmp$"))
+                    {
+                        File.Copy(bmp, file);
+                    }
+                    else if (Regex.IsMatch(file, "jpg$") || Regex.IsMatch(file, "jpeg$"))
+                    {
+                        File.Copy(jpg, file);
+                    }
+                }
+            }
+
+            // step3: remove empty folder
+            if (removeEmptyFolderCheckBox.Checked)
+            {
+                filesSizeLabel.Text = "Removing empty folders...";
+                DirectoryInfo dir = new DirectoryInfo(directoryPath.Text + "Songs");
+                DirectoryInfo[] subdirs = dir.GetDirectories("*.*", System.IO.SearchOption.AllDirectories);
+                foreach (DirectoryInfo subdir in subdirs)
+                {
+                    FileSystemInfo[] subFiles = subdir.GetFileSystemInfos();
+                    if (subFiles.Count() == 0)
+                    {
+                        subdir.Delete();
+                    }
+                }
+            }
+
+            filesSizeLabel.Text = "Work complete.";
         }
 
         private void selectAllButton_Click(object sender, EventArgs e)
@@ -153,99 +205,63 @@ namespace osu_cleaner
             else deleteButton.Text = "Delete";
         }
 
-        private bool RegexMatch(string str, string regex)
+        private void addToDeletelist(string file)
         {
-            Regex r = new Regex(regex);
-            return r.IsMatch(str);
+            long size = getFileSize(file);
+            if (size != 0)
+            {
+                deletelist.Add(file);
+                filesSize += size;
+            }
         }
 
         private void findElements(object sender, DoWorkEventArgs e)
         {
-            int folderCount = Directory.GetDirectories(directoryPath.Text + "Songs").Length;
+            string[] songsfolders = Directory.GetDirectories(directoryPath.Text + "Songs");
+            int folderCount = songsfolders.Length;
             Console.WriteLine(folderCount);
             int current = 0;
-            foreach (string d in Directory.GetDirectories(directoryPath.Text + "Songs"))
+            bool isKeepBG = backgroundKeepCheckbox.Checked;
+            bool isReplaceBG = backgroundReplaceCheckBox.Checked;
+            bool isKeepWav = wavFileKeepCheckbox.Checked;
+            foreach (string d in songsfolders)
             {
-                if (sbDeleteCheckbox.Checked)
-                {
-                    //whitelisting BG from deletion (often BG files are used in SB)
-                    List<string> whitelist = new List<string>();
-                    foreach (string file in Directory.GetFiles(d))
-                        if (Regex.IsMatch(file, "osu$"))
-                        {
-                            string bg = getBGPath(file);
-                            if (bg != null && !whitelist.Contains(bg))
-                                whitelist.Add(bg);
-                        }
-
-                    foreach (string file in Directory.GetFiles(d))
-                    {
-                        if (Regex.IsMatch(file, "osb$"))
-                        {
-                            List<string> sbElements = getSBElements(file);
-                            foreach (string sbElement in sbElements)
-                            {
-                                if (!whitelist.Contains(sbElement))
-                                {
-                                    long size = getFileSize(d + sbElement);
-                                    if (size != 0)
-                                    {
-                                        foundElements.Add(d + sbElement);
-                                        filesSize += size;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-
-                if (backgroundDeleteCheckbox.Checked)
-                {
-                    List<string> bgElements = new List<string>();
-                    foreach (string file in Directory.GetFiles(d))
-                        if (Regex.IsMatch(file, "osu$"))
-                        {
-                            string bg = getBGPath(file);
-                            if (bg != null && !bgElements.Contains(bg))
-                            {
-                                long size = getFileSize(d + bg);
-                                if (size != 0)
-                                {
-                                    bgElements.Add(bg);
-                                    foundElements.Add(d + bg);
-                                    filesSize += size;
-                                }
-                            }
-                        }
-                }
-
+                // get BG
+                List<string> bgs = new List<string>();
                 foreach (string file in Directory.GetFiles(d))
                 {
-                    if (videoDeleteCheckbox.Checked)
-                        if (RegexMatch(file, "avi$") || RegexMatch(file, "flv$"))
-                        {
-                            foundElements.Add(file);
-                            filesSize += getFileSize(file);
-                        }
-                    if (skinDeleteCheckbox.Checked)
+                    if (Regex.IsMatch(file, "osu$"))
                     {
-                        foreach (string regex in skinElements)
-                            if (RegexMatch(file, regex))
-                            {
-                                foundElements.Add(file);
-                                filesSize += getFileSize(file);
-                            }
-                    }
-                    if (hitSoundsDeleteCheckbox.Checked)
-                    {
-
-                        if (RegexMatch(file, "\\\\drum-") || RegexMatch(file, "\\\\normal-") || RegexMatch(file, "\\\\soft-"))
-                        {
-                            foundElements.Add(file);
-                            filesSize += getFileSize(file);
-                        }
+                        bgs.Add(d + getBGPath(file));
                     }
                 }
+                // add files to list
+                foreach (string file in Directory.GetFiles(d, "*", System.IO.SearchOption.AllDirectories))
+                {
+                    if (Regex.IsMatch(file, "osu$") || Regex.IsMatch(file, "mp3$"))
+                    {
+                        continue;
+                    }
+                    if (isKeepWav && Regex.IsMatch(file, "wav$"))
+                    {
+                        continue;
+                    }
+                    if (bgs.Contains(file))
+                    {
+                        if (isReplaceBG)
+                        {
+                            addToDeletelist(file);
+                            replacelist.Add(file);
+                            continue;
+                        }
+                        else if (isKeepBG)
+                        {
+                            continue;
+                        }
+                    }
+                    addToDeletelist(file);
+                }
+
                 if (worker.CancellationPending) return;
                 current++;
                 worker.ReportProgress((int)((double)current / folderCount * 100));
@@ -261,10 +277,10 @@ namespace osu_cleaner
 
         private void findComplete(object sender, RunWorkerCompletedEventArgs e)
         {
-            foreach (string file in foundElements)
-                    elementList.Items.Add(file);
+            foreach (string file in deletelist)
+                elementList.Items.Add(file);
             filesSizeLabel.Text = "Found: " + Math.Round((double)(filesSize) / 1048576, 4) + " MB";
-            foundElements.Clear();
+            deletelist.Clear();
             FindProgressBar.Visible = false;
             cancelButton.Visible = false;
             FindProgressBar.Value = 0;
@@ -307,27 +323,6 @@ namespace osu_cleaner
             }
         }
 
-        private List<string> getSBElements(string file)
-        {
-            List<string> sbElements = new List<string>();
-            using (StreamReader sbFile = File.OpenText(file))
-            {
-                string line;
-                while ((line = sbFile.ReadLine()) != null)
-                {
-                    string[] items = line.Split(',');
-                    if (items[0] == "Sprite")
-                    {
-                        string tmp = "\\" + items[3].Replace("\"", string.Empty);
-                        tmp = tmp.Replace("/", "\\");
-                        if (!sbElements.Contains(tmp))
-                            sbElements.Add(tmp);
-                    }
-                }
-            }
-            return sbElements;
-        }
-
         private long getFileSize(string path)
         {
             try
@@ -343,64 +338,6 @@ namespace osu_cleaner
             {
                 return 0;
             }
-        }
-
-        private void setSkinList()
-        {
-            skinElements.Add("\\\\applause"); ;
-            skinElements.Add("\\\\approachcircle"); ;
-            skinElements.Add("\\\\button-"); ;
-            skinElements.Add("\\\\combobreak");
-            skinElements.Add("\\\\comboburst");
-            skinElements.Add("\\\\count");
-            skinElements.Add("\\\\cursor");
-            skinElements.Add("\\\\default-");
-            skinElements.Add("\\\\failsound");
-            skinElements.Add("\\\\followpoint");
-            skinElements.Add("\\\\fruit-");
-            skinElements.Add("\\\\go\\.png");
-            skinElements.Add("\\\\go@2x\\.png");
-            skinElements.Add("\\\\gos\\.png");
-            skinElements.Add("\\\\gos@2x\\.png");
-            skinElements.Add("\\\\hit0");
-            skinElements.Add("\\\\hit100");
-            skinElements.Add("\\\\hit300");
-            skinElements.Add("\\\\hit50");
-            skinElements.Add("\\\\hitcircle");
-            skinElements.Add("\\\\inputoverlay-");
-            skinElements.Add("\\\\lighting\\.png");
-            skinElements.Add("\\\\lighting@2x\\.png");
-            skinElements.Add("\\\\mania-");
-            skinElements.Add("\\\\menu\\.");
-            skinElements.Add("\\\\menu-back");
-            skinElements.Add("\\\\particle100");
-            skinElements.Add("\\\\particle300");
-            skinElements.Add("\\\\particle50");
-            skinElements.Add("\\\\pause-");
-            skinElements.Add("\\\\pippidon");
-            skinElements.Add("\\\\play-");
-            skinElements.Add("\\\\ranking-");
-            skinElements.Add("\\\\ready");
-            skinElements.Add("\\\\reversearrow");
-            skinElements.Add("\\\\score-");
-            skinElements.Add("\\\\scorebar-");
-            skinElements.Add("\\\\sectionfail");
-            skinElements.Add("\\\\sectionpass");
-            skinElements.Add("\\\\section-");
-            skinElements.Add("\\\\selection-");
-            skinElements.Add("\\\\sliderb");
-            skinElements.Add("\\\\sliderfollowcircle");
-            skinElements.Add("\\\\sliderscorepoint");
-            skinElements.Add("\\\\spinnerbonus");
-            skinElements.Add("\\\\spinner-");
-            skinElements.Add("\\\\spinnerspin");
-            skinElements.Add("\\\\star\\.png");
-            skinElements.Add("\\\\star@2x\\.png");
-            skinElements.Add("\\\\star2\\.png");
-            skinElements.Add("\\\\star2@2x\\.png");
-            skinElements.Add("\\\\taiko-");
-            skinElements.Add("\\\\taikobigcircle");
-            skinElements.Add("\\\\taikohitcircle");
         }
     }
 }
