@@ -60,6 +60,18 @@ namespace osu_cleaner
             directoryPath.Text = folder.SelectedPath + "\\";
         }
 
+        private bool MatchSuffix(string file, string suffix)
+        {
+            return Regex.IsMatch(file.ToLower(), suffix.ToLower()+"$");
+        }
+
+        private bool StringListContains(List<string> list, string file)
+        {
+            string match = list.FirstOrDefault(element => element.Equals(file, StringComparison.OrdinalIgnoreCase));
+            if (match == null) return false;
+            else return true;
+        }
+
         private void findButton_Click(object sender, EventArgs e)
         {
             if (!directoryPath.Text.EndsWith("\\")) directoryPath.Text = directoryPath.Text + "\\";
@@ -127,15 +139,15 @@ namespace osu_cleaner
                 }
                 foreach (string file in replace)
                 {
-                    if (Regex.IsMatch(file, "png$"))
+                    if (MatchSuffix(file, "png"))
                     {
                         File.Copy(png, file);
                     }
-                    else if (Regex.IsMatch(file, "bmp$"))
+                    else if (MatchSuffix(file, "bmp"))
                     {
                         File.Copy(bmp, file);
                     }
-                    else if (Regex.IsMatch(file, "jpg$") || Regex.IsMatch(file, "jpeg$"))
+                    else if (MatchSuffix(file, "jpg") || MatchSuffix(file, "jpeg"))
                     {
                         File.Copy(jpg, file);
                     }
@@ -226,27 +238,33 @@ namespace osu_cleaner
             bool isKeepWav = wavFileKeepCheckbox.Checked;
             foreach (string d in songsfolders)
             {
-                // get BG
+                // get audio and BG
                 List<string> bgs = new List<string>();
+                List<string> audios = new List<string>();
                 foreach (string file in Directory.GetFiles(d))
                 {
-                    if (Regex.IsMatch(file, "osu$"))
+                    if (MatchSuffix(file, "osu"))
                     {
                         bgs.Add(d + getBGPath(file));
+                        audios.Add(d + getAudioPath(file));
                     }
                 }
                 // add files to list
                 foreach (string file in Directory.GetFiles(d, "*", System.IO.SearchOption.AllDirectories))
                 {
-                    if (Regex.IsMatch(file, "osu$") || Regex.IsMatch(file, "mp3$"))
+                    if (MatchSuffix(file, "osu"))
                     {
                         continue;
                     }
-                    if (isKeepWav && Regex.IsMatch(file, "wav$"))
+                    if (StringListContains(audios,file))
                     {
                         continue;
                     }
-                    if (bgs.Contains(file))
+                    if (isKeepWav && MatchSuffix(file, "wav"))
+                    {
+                        continue;
+                    }
+                    if (StringListContains(bgs,file))
                     {
                         if (isReplaceBG)
                         {
@@ -317,6 +335,24 @@ namespace osu_cleaner
                             string tmp = "\\" + items[2].Replace("\"", string.Empty);
                             return tmp;
                         }
+                    }
+                }
+                return null;
+            }
+        }
+
+        private string getAudioPath(string path)
+        {
+            using (StreamReader file = File.OpenText(path))
+            {
+                string line;
+                while ((line = file.ReadLine()) != null)
+                {
+                    if (Regex.IsMatch(line, "^AudioFilename:"))
+                    {
+                        string[] items = line.Split(':');
+                        string tmp = "\\" + items[1].Trim();
+                        return tmp;
                     }
                 }
                 return null;
