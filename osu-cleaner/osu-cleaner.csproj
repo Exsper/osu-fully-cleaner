@@ -83,7 +83,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="build_required\replace\bg.bmp" />
     <Content Include="build_required\replace\bg.jpg" />
     <Content Include="build_required\replace\bg.png" />
   </ItemGroup>

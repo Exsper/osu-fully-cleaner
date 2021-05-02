@@ -127,7 +127,6 @@ namespace osu_cleaner
             {
                 filesSizeLabel.Text = "Replacing...";
                 string png = AppDomain.CurrentDomain.BaseDirectory + "replace\\bg.png";
-                string bmp = AppDomain.CurrentDomain.BaseDirectory + "replace\\bg.bmp";
                 string jpg = AppDomain.CurrentDomain.BaseDirectory + "replace\\bg.jpg";
                 List<string> replace = new List<string>();
                 foreach (string file in replacelist)
@@ -142,10 +141,6 @@ namespace osu_cleaner
                     if (MatchSuffix(file, "png"))
                     {
                         File.Copy(png, file);
-                    }
-                    else if (MatchSuffix(file, "bmp"))
-                    {
-                        File.Copy(bmp, file);
                     }
                     else if (MatchSuffix(file, "jpg") || MatchSuffix(file, "jpeg"))
                     {
@@ -328,14 +323,17 @@ namespace osu_cleaner
                 string line;
                 while ((line = file.ReadLine()) != null)
                 {
-                    if (Regex.IsMatch(line, "^//Background and Video events"))
+                    if (Regex.IsMatch(line, @"^\[Events\]"))
                     {
-                        line = file.ReadLine();
-                        string[] items = line.Split(',');
-                        if (items[0] == "0")
+                        while ((line = file.ReadLine()) != null)
                         {
-                            string tmp = "\\" + items[2].Replace("\"", string.Empty);
-                            return tmp;
+                            if (Regex.IsMatch(line, @"^\[TimingPoints\]")) return null;
+                            if (Regex.IsMatch(line, @"^0,0,"))
+                            {
+                                string[] items = line.Split(',');
+                                string tmp = "\\" + items[2].Replace("\"", string.Empty);
+                                return tmp;
+                            }
                         }
                     }
                 }
