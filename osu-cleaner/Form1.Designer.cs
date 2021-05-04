@@ -28,6 +28,7 @@ namespace osu_cleaner
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainApp));
             this.elementList = new System.Windows.Forms.CheckedListBox();
             this.directoryLabel = new System.Windows.Forms.Label();
             this.directoryPath = new System.Windows.Forms.TextBox();
@@ -51,198 +52,133 @@ namespace osu_cleaner
             // 
             // elementList
             // 
+            resources.ApplyResources(this.elementList, "elementList");
             this.elementList.CheckOnClick = true;
             this.elementList.FormattingEnabled = true;
-            this.elementList.Location = new System.Drawing.Point(9, 138);
             this.elementList.Name = "elementList";
-            this.elementList.Size = new System.Drawing.Size(728, 324);
-            this.elementList.TabIndex = 9;
             this.elementList.SelectedIndexChanged += new System.EventHandler(this.elementList_SelectedIndexChanged);
             // 
             // directoryLabel
             // 
-            this.directoryLabel.Location = new System.Drawing.Point(12, 9);
+            resources.ApplyResources(this.directoryLabel, "directoryLabel");
             this.directoryLabel.Name = "directoryLabel";
-            this.directoryLabel.Size = new System.Drawing.Size(100, 21);
-            this.directoryLabel.TabIndex = 8;
-            this.directoryLabel.Text = "osu! directory path:";
             // 
             // directoryPath
             // 
-            this.directoryPath.Location = new System.Drawing.Point(115, 6);
+            resources.ApplyResources(this.directoryPath, "directoryPath");
             this.directoryPath.Name = "directoryPath";
-            this.directoryPath.Size = new System.Drawing.Size(460, 21);
-            this.directoryPath.TabIndex = 7;
             // 
             // directorySelectButton
             // 
-            this.directorySelectButton.Location = new System.Drawing.Point(581, 5);
+            resources.ApplyResources(this.directorySelectButton, "directorySelectButton");
             this.directorySelectButton.Name = "directorySelectButton";
-            this.directorySelectButton.Size = new System.Drawing.Size(75, 22);
-            this.directorySelectButton.TabIndex = 6;
-            this.directorySelectButton.Text = "Browse";
             this.directorySelectButton.UseVisualStyleBackColor = true;
             this.directorySelectButton.Click += new System.EventHandler(this.directorySelectButton_Click);
             // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(665, 543);
+            resources.ApplyResources(this.deleteButton, "deleteButton");
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(75, 21);
-            this.deleteButton.TabIndex = 2;
-            this.deleteButton.Text = "Delete";
             this.deleteButton.UseVisualStyleBackColor = true;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // findButton
             // 
-            this.findButton.Location = new System.Drawing.Point(581, 106);
+            resources.ApplyResources(this.findButton, "findButton");
             this.findButton.Name = "findButton";
-            this.findButton.Size = new System.Drawing.Size(75, 21);
-            this.findButton.TabIndex = 1;
-            this.findButton.Text = "Find";
             this.findButton.UseVisualStyleBackColor = true;
             this.findButton.Click += new System.EventHandler(this.findButton_Click);
             // 
             // DeletePermanentlyCheckbox
             // 
+            resources.ApplyResources(this.DeletePermanentlyCheckbox, "DeletePermanentlyCheckbox");
             this.DeletePermanentlyCheckbox.Checked = true;
             this.DeletePermanentlyCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.DeletePermanentlyCheckbox.Location = new System.Drawing.Point(12, 538);
             this.DeletePermanentlyCheckbox.Name = "DeletePermanentlyCheckbox";
-            this.DeletePermanentlyCheckbox.Size = new System.Drawing.Size(281, 22);
-            this.DeletePermanentlyCheckbox.TabIndex = 0;
-            this.DeletePermanentlyCheckbox.Text = "Delete permanently instead of moving to Recycle Bin";
             this.DeletePermanentlyCheckbox.UseVisualStyleBackColor = true;
             this.DeletePermanentlyCheckbox.CheckedChanged += new System.EventHandler(this.DeletePermanentlyCheckbox_CheckedChanged);
             // 
             // selectAllButton
             // 
-            this.selectAllButton.Location = new System.Drawing.Point(584, 511);
+            resources.ApplyResources(this.selectAllButton, "selectAllButton");
             this.selectAllButton.Name = "selectAllButton";
-            this.selectAllButton.Size = new System.Drawing.Size(75, 21);
-            this.selectAllButton.TabIndex = 10;
-            this.selectAllButton.Text = "Select all";
             this.selectAllButton.UseVisualStyleBackColor = true;
             this.selectAllButton.Click += new System.EventHandler(this.selectAllButton_Click);
             // 
             // deselectAllButton
             // 
-            this.deselectAllButton.Location = new System.Drawing.Point(665, 511);
+            resources.ApplyResources(this.deselectAllButton, "deselectAllButton");
             this.deselectAllButton.Name = "deselectAllButton";
-            this.deselectAllButton.Size = new System.Drawing.Size(75, 21);
-            this.deselectAllButton.TabIndex = 11;
-            this.deselectAllButton.Text = "Unselect all";
             this.deselectAllButton.UseVisualStyleBackColor = true;
             this.deselectAllButton.Click += new System.EventHandler(this.deselectAllButton_Click);
             // 
             // filesSizeLabel
             // 
-            this.filesSizeLabel.AutoSize = true;
-            this.filesSizeLabel.Location = new System.Drawing.Point(9, 511);
+            resources.ApplyResources(this.filesSizeLabel, "filesSizeLabel");
             this.filesSizeLabel.Name = "filesSizeLabel";
-            this.filesSizeLabel.Size = new System.Drawing.Size(71, 12);
-            this.filesSizeLabel.TabIndex = 12;
-            this.filesSizeLabel.Text = "Found: 0 MB";
             // 
             // forRemovalSizeLabel
             // 
-            this.forRemovalSizeLabel.AutoSize = true;
-            this.forRemovalSizeLabel.Location = new System.Drawing.Point(9, 523);
+            resources.ApplyResources(this.forRemovalSizeLabel, "forRemovalSizeLabel");
             this.forRemovalSizeLabel.Name = "forRemovalSizeLabel";
-            this.forRemovalSizeLabel.Size = new System.Drawing.Size(155, 12);
-            this.forRemovalSizeLabel.TabIndex = 13;
-            this.forRemovalSizeLabel.Text = "Selected for removal: 0MB";
             // 
             // backgroundKeepCheckbox
             // 
-            this.backgroundKeepCheckbox.AutoSize = true;
+            resources.ApplyResources(this.backgroundKeepCheckbox, "backgroundKeepCheckbox");
             this.backgroundKeepCheckbox.Checked = true;
             this.backgroundKeepCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.backgroundKeepCheckbox.Location = new System.Drawing.Point(14, 45);
             this.backgroundKeepCheckbox.Name = "backgroundKeepCheckbox";
-            this.backgroundKeepCheckbox.Size = new System.Drawing.Size(120, 16);
-            this.backgroundKeepCheckbox.TabIndex = 14;
-            this.backgroundKeepCheckbox.Text = "Keep backgrounds";
             this.backgroundKeepCheckbox.UseVisualStyleBackColor = true;
             // 
             // moveCheckBox
             // 
-            this.moveCheckBox.AutoSize = true;
-            this.moveCheckBox.Location = new System.Drawing.Point(12, 564);
+            resources.ApplyResources(this.moveCheckBox, "moveCheckBox");
             this.moveCheckBox.Name = "moveCheckBox";
-            this.moveCheckBox.Size = new System.Drawing.Size(246, 16);
-            this.moveCheckBox.TabIndex = 15;
-            this.moveCheckBox.Text = "Move to \'Cleaned\' instead of removing";
             this.moveCheckBox.UseVisualStyleBackColor = true;
             this.moveCheckBox.CheckedChanged += new System.EventHandler(this.moveCheckBox_CheckedChanged);
             // 
             // wavFileKeepCheckbox
             // 
-            this.wavFileKeepCheckbox.AutoSize = true;
-            this.wavFileKeepCheckbox.Location = new System.Drawing.Point(14, 89);
+            resources.ApplyResources(this.wavFileKeepCheckbox, "wavFileKeepCheckbox");
             this.wavFileKeepCheckbox.Name = "wavFileKeepCheckbox";
-            this.wavFileKeepCheckbox.Size = new System.Drawing.Size(114, 16);
-            this.wavFileKeepCheckbox.TabIndex = 16;
-            this.wavFileKeepCheckbox.Text = "Keep .wav files";
             this.wavFileKeepCheckbox.UseVisualStyleBackColor = true;
             // 
             // FindProgressBar
             // 
-            this.FindProgressBar.Location = new System.Drawing.Point(9, 472);
+            resources.ApplyResources(this.FindProgressBar, "FindProgressBar");
             this.FindProgressBar.Name = "FindProgressBar";
-            this.FindProgressBar.Size = new System.Drawing.Size(728, 21);
             this.FindProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.FindProgressBar.TabIndex = 17;
-            this.FindProgressBar.Visible = false;
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(665, 106);
+            resources.ApplyResources(this.cancelButton, "cancelButton");
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(75, 21);
-            this.cancelButton.TabIndex = 18;
-            this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
-            this.cancelButton.Visible = false;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // backgroundReplaceCheckBox
             // 
-            this.backgroundReplaceCheckBox.AutoSize = true;
-            this.backgroundReplaceCheckBox.Location = new System.Drawing.Point(43, 67);
+            resources.ApplyResources(this.backgroundReplaceCheckBox, "backgroundReplaceCheckBox");
             this.backgroundReplaceCheckBox.Name = "backgroundReplaceCheckBox";
-            this.backgroundReplaceCheckBox.Size = new System.Drawing.Size(138, 16);
-            this.backgroundReplaceCheckBox.TabIndex = 19;
-            this.backgroundReplaceCheckBox.Text = "Replace backgrounds";
             this.backgroundReplaceCheckBox.UseVisualStyleBackColor = true;
             // 
             // removeEmptyFolderCheckBox
             // 
-            this.removeEmptyFolderCheckBox.AutoSize = true;
+            resources.ApplyResources(this.removeEmptyFolderCheckBox, "removeEmptyFolderCheckBox");
             this.removeEmptyFolderCheckBox.Checked = true;
             this.removeEmptyFolderCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.removeEmptyFolderCheckBox.Location = new System.Drawing.Point(14, 111);
             this.removeEmptyFolderCheckBox.Name = "removeEmptyFolderCheckBox";
-            this.removeEmptyFolderCheckBox.Size = new System.Drawing.Size(138, 16);
-            this.removeEmptyFolderCheckBox.TabIndex = 20;
-            this.removeEmptyFolderCheckBox.Text = "Remove empty folder";
             this.removeEmptyFolderCheckBox.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 30);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(347, 12);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "Warning: Will delete all files except .osu and .mp3 files";
             // 
             // MainApp
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(752, 586);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.removeEmptyFolderCheckBox);
             this.Controls.Add(this.backgroundReplaceCheckBox);
@@ -263,7 +199,6 @@ namespace osu_cleaner
             this.Controls.Add(this.directoryLabel);
             this.Controls.Add(this.elementList);
             this.Name = "MainApp";
-            this.Text = "osu! Fully Cleaner v1.1";
             this.Load += new System.EventHandler(this.MainApp_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

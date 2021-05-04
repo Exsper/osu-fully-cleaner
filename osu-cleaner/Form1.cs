@@ -2,7 +2,13 @@
 * osu-cleaner
 * Version: 1.00
 * Author: henntix
+* 
+* osu-fully-cleaner
+* Version: 1.10
+* Author: Exsper
 */
+using Microsoft.VisualBasic.FileIO;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,8 +16,6 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using Microsoft.VisualBasic.FileIO;
-using Microsoft.Win32;
 namespace osu_cleaner
 {
     public partial class MainApp : Form
@@ -44,7 +48,7 @@ namespace osu_cleaner
             FolderBrowserDialog folder = new FolderBrowserDialog();
             folder.ShowNewFolderButton = false;
             folder.RootFolder = Environment.SpecialFolder.MyComputer;
-            folder.Description = "Select an osu! root directory:";
+            folder.Description = osu_fully_cleaner.Resource.select_osu_directory;
             folder.SelectedPath = directoryPath.Text;
             DialogResult path = folder.ShowDialog();
             if (path == DialogResult.OK)
@@ -52,7 +56,7 @@ namespace osu_cleaner
                 //check if osu!.exe is present
                 if (!File.Exists(folder.SelectedPath + "\\osu!.exe"))
                 {
-                    MessageBox.Show("Not a valid osu! directory!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show(osu_fully_cleaner.Resource.osu_directory_not_valid, osu_fully_cleaner.Resource.error_messagebox_title, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     directorySelectButton_Click(sender, e);
                     return;
                 }
@@ -79,9 +83,9 @@ namespace osu_cleaner
             cancelButton.Visible = true;
             elementList.Items.Clear();
             filesSize = 0;
-            filesSizeLabel.Text = "Found: " + Math.Round((double)(filesSize) / 1048576, 4) + " MB";
+            filesSizeLabel.Text = osu_fully_cleaner.Resource.find_size_label_pre + Math.Round((double)(filesSize) / 1048576, 4) + " MB";
             forRemovalSize = 0;
-            forRemovalSizeLabel.Text = "Selected for removal: " + Math.Round((double)(forRemovalSize) / 1048576, 4) + " MB";
+            forRemovalSizeLabel.Text = osu_fully_cleaner.Resource.find_removal_label_pre + Math.Round((double)(forRemovalSize) / 1048576, 4) + " MB";
             worker.RunWorkerAsync();
         }
 
@@ -119,13 +123,13 @@ namespace osu_cleaner
                 catch (NotSupportedException) { }
 
                 elementList.Items.Remove(file);
-                filesSizeLabel.Text = "Found: " + Math.Round((double)(filesSize) / 1048576, 4) + " MB";
+                filesSizeLabel.Text = osu_fully_cleaner.Resource.find_size_label_pre + Math.Round((double)(filesSize) / 1048576, 4) + " MB";
             }
 
             // step2: replace files
             if (backgroundReplaceCheckBox.Checked)
             {
-                filesSizeLabel.Text = "Replacing...";
+                filesSizeLabel.Text = osu_fully_cleaner.Resource.replace_bg_label;
                 string png = AppDomain.CurrentDomain.BaseDirectory + "replace\\bg.png";
                 string jpg = AppDomain.CurrentDomain.BaseDirectory + "replace\\bg.jpg";
                 List<string> replace = new List<string>();
@@ -152,7 +156,7 @@ namespace osu_cleaner
             // step3: remove empty folder
             if (removeEmptyFolderCheckBox.Checked)
             {
-                filesSizeLabel.Text = "Removing empty folders...";
+                filesSizeLabel.Text = osu_fully_cleaner.Resource.remove_empty_folder_label;
                 DirectoryInfo dir = new DirectoryInfo(directoryPath.Text + "Songs");
                 DirectoryInfo[] subdirs = dir.GetDirectories("*.*", System.IO.SearchOption.AllDirectories);
                 foreach (DirectoryInfo subdir in subdirs)
@@ -165,7 +169,7 @@ namespace osu_cleaner
                 }
             }
 
-            filesSizeLabel.Text = "Work complete.";
+            filesSizeLabel.Text = osu_fully_cleaner.Resource.work_finish;
         }
 
         private void selectAllButton_Click(object sender, EventArgs e)
@@ -178,7 +182,7 @@ namespace osu_cleaner
                 FileInfo sizeInfo = new FileInfo(file);
                 forRemovalSize += sizeInfo.Length;
             }
-            forRemovalSizeLabel.Text = "Selected for removal: " + Math.Round((double)(forRemovalSize) / 1048576, 4) + " MB";
+            forRemovalSizeLabel.Text = osu_fully_cleaner.Resource.find_removal_label_pre + Math.Round((double)(forRemovalSize) / 1048576, 4) + " MB";
         }
 
         private void deselectAllButton_Click(object sender, EventArgs e)
@@ -186,7 +190,7 @@ namespace osu_cleaner
             for (int i = 0; i < elementList.Items.Count; i++)
                 elementList.SetItemChecked(i, false);
             forRemovalSize = 0;
-            forRemovalSizeLabel.Text = "Selected for removal: " + Math.Round((double)(forRemovalSize) / 1048576, 4) + " MB";
+            forRemovalSizeLabel.Text = osu_fully_cleaner.Resource.find_removal_label_pre + Math.Round((double)(forRemovalSize) / 1048576, 4) + " MB";
         }
 
         private void elementList_SelectedIndexChanged(object sender, EventArgs e)
@@ -197,7 +201,7 @@ namespace osu_cleaner
                 FileInfo sizeInfo = new FileInfo(file);
                 forRemovalSize += sizeInfo.Length;
             }
-            forRemovalSizeLabel.Text = "Selected for removal: " + Math.Round((double)(forRemovalSize) / 1048576, 4) + " MB";
+            forRemovalSizeLabel.Text = osu_fully_cleaner.Resource.find_removal_label_pre + Math.Round((double)(forRemovalSize) / 1048576, 4) + " MB";
         }
 
         private void DeletePermanentlyCheckbox_CheckedChanged(object sender, EventArgs e)
@@ -208,8 +212,8 @@ namespace osu_cleaner
         private void moveCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             if(moveCheckBox.Checked) DeletePermanentlyCheckbox.Checked = false;
-            if (moveCheckBox.Checked) deleteButton.Text = "Move";
-            else deleteButton.Text = "Delete";
+            if (moveCheckBox.Checked) deleteButton.Text = osu_fully_cleaner.Resource.delete_button_move_text;
+            else deleteButton.Text = osu_fully_cleaner.Resource.delete_button_delete_text;
         }
 
         private void addToDeletelist(string file)
@@ -287,14 +291,14 @@ namespace osu_cleaner
         private void progressBar(object sender, ProgressChangedEventArgs e)
         {
             FindProgressBar.Value = e.ProgressPercentage;
-            filesSizeLabel.Text = "Found: " + Math.Round((double)(filesSize) / 1048576, 4) + " MB";
+            filesSizeLabel.Text = osu_fully_cleaner.Resource.find_size_label_pre + Math.Round((double)(filesSize) / 1048576, 4) + " MB";
         }
 
         private void findComplete(object sender, RunWorkerCompletedEventArgs e)
         {
             foreach (string file in deletelist)
                 elementList.Items.Add(file);
-            filesSizeLabel.Text = "Found: " + Math.Round((double)(filesSize) / 1048576, 4) + " MB";
+            filesSizeLabel.Text = osu_fully_cleaner.Resource.find_size_label_pre + Math.Round((double)(filesSize) / 1048576, 4) + " MB";
             deletelist.Clear();
             FindProgressBar.Visible = false;
             cancelButton.Visible = false;
