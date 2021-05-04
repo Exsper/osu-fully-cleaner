@@ -328,7 +328,7 @@ namespace osu_cleaner
                         while ((line = file.ReadLine()) != null)
                         {
                             if (Regex.IsMatch(line, @"^\[TimingPoints\]")) return null;
-                            if (Regex.IsMatch(line, @"^0,0,"))
+                            if (Regex.IsMatch(line, @"^0,"))
                             {
                                 string[] items = line.Split(',');
                                 string tmp = "\\" + items[2].Replace("\"", string.Empty);
