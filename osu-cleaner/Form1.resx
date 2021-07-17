@@ -117,501 +117,552 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="backgroundReplaceCheckBox.Text" xml:space="preserve">
-    <value>Replace backgrounds</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="directorySelectButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 22</value>
-  </data>
-  <data name="backgroundKeepCheckbox.Text" xml:space="preserve">
-    <value>Keep backgrounds</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="deselectAllButton.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;directoryLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;filesSizeLabel.Name" xml:space="preserve">
-    <value>filesSizeLabel</value>
-  </data>
-  <data name="&gt;&gt;directorySelectButton.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
-  <data name="backgroundReplaceCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
   <data name="elementList.Location" type="System.Drawing.Point, System.Drawing">
     <value>9, 138</value>
   </data>
-  <data name="&gt;&gt;deselectAllButton.Parent" xml:space="preserve">
+  <data name="elementList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>728, 324</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="elementList.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;elementList.Name" xml:space="preserve">
+    <value>elementList</value>
+  </data>
+  <data name="&gt;&gt;elementList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckedListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;elementList.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;cancelButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;cancelButton.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="directorySelectButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>581, 5</value>
-  </data>
-  <data name="&gt;&gt;backgroundKeepCheckbox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="filesSizeLabel.Text" xml:space="preserve">
-    <value>Found: 0 MB</value>
-  </data>
-  <data name="selectAllButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>584, 511</value>
-  </data>
-  <data name="&gt;&gt;removeEmptyFolderCheckBox.Name" xml:space="preserve">
-    <value>removeEmptyFolderCheckBox</value>
-  </data>
-  <data name="removeEmptyFolderCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 111</value>
-  </data>
-  <data name="&gt;&gt;directoryPath.ZOrder" xml:space="preserve">
-    <value>16</value>
-  </data>
-  <data name="deleteButton.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="selectAllButton.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="moveCheckBox.Text" xml:space="preserve">
-    <value>Move to 'Cleaned' instead of removing</value>
-  </data>
-  <data name="&gt;&gt;directoryLabel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="backgroundKeepCheckbox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="DeletePermanentlyCheckbox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 538</value>
-  </data>
-  <data name="&gt;&gt;forRemovalSizeLabel.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="DeletePermanentlyCheckbox.Text" xml:space="preserve">
-    <value>Delete permanently instead of moving to Recycle Bin</value>
-  </data>
-  <data name="moveCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;elementList.ZOrder" xml:space="preserve">
+    <value>20</value>
   </data>
   <data name="directoryLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 9</value>
   </data>
-  <data name="&gt;&gt;removeEmptyFolderCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="deleteButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 21</value>
-  </data>
-  <data name="wavFileKeepCheckbox.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
+  <data name="directoryLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 21</value>
   </data>
   <data name="directoryLabel.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
-  <data name="&gt;&gt;wavFileKeepCheckbox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="directoryLabel.Text" xml:space="preserve">
+    <value>osu! directory path:</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>osu! Fully Cleaner v1.1</value>
+  <data name="&gt;&gt;directoryLabel.Name" xml:space="preserve">
+    <value>directoryLabel</value>
   </data>
-  <data name="&gt;&gt;deselectAllButton.ZOrder" xml:space="preserve">
-    <value>10</value>
+  <data name="&gt;&gt;directoryLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;directoryLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;directoryLabel.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="directoryPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>115, 6</value>
+  </data>
+  <data name="directoryPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>460, 21</value>
+  </data>
+  <data name="directoryPath.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;directoryPath.Name" xml:space="preserve">
+    <value>directoryPath</value>
+  </data>
+  <data name="&gt;&gt;directoryPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;directoryPath.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;directoryPath.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="directorySelectButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>581, 5</value>
+  </data>
+  <data name="directorySelectButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 22</value>
   </data>
   <data name="directorySelectButton.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;directorySelectButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
+  <data name="directorySelectButton.Text" xml:space="preserve">
+    <value>Browse</value>
   </data>
   <data name="&gt;&gt;directorySelectButton.Name" xml:space="preserve">
     <value>directorySelectButton</value>
   </data>
-  <data name="wavFileKeepCheckbox.AutoSize" type="System.Boolean, mscorlib">
+  <data name="&gt;&gt;directorySelectButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;directorySelectButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;directorySelectButton.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="deleteButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>665, 543</value>
+  </data>
+  <data name="deleteButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 21</value>
+  </data>
+  <data name="deleteButton.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="deleteButton.Text" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="&gt;&gt;deleteButton.Name" xml:space="preserve">
+    <value>deleteButton</value>
+  </data>
+  <data name="&gt;&gt;deleteButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;deleteButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;deleteButton.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="findButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>581, 106</value>
+  </data>
+  <data name="findButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 21</value>
+  </data>
+  <data name="findButton.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="findButton.Text" xml:space="preserve">
+    <value>Find</value>
+  </data>
+  <data name="&gt;&gt;findButton.Name" xml:space="preserve">
+    <value>findButton</value>
+  </data>
+  <data name="&gt;&gt;findButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;findButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;findButton.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="DeletePermanentlyCheckbox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 538</value>
+  </data>
+  <data name="DeletePermanentlyCheckbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>329, 22</value>
+  </data>
+  <data name="DeletePermanentlyCheckbox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="DeletePermanentlyCheckbox.Text" xml:space="preserve">
+    <value>Delete permanently instead of moving to Recycle Bin</value>
+  </data>
+  <data name="&gt;&gt;DeletePermanentlyCheckbox.Name" xml:space="preserve">
+    <value>DeletePermanentlyCheckbox</value>
+  </data>
+  <data name="&gt;&gt;DeletePermanentlyCheckbox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DeletePermanentlyCheckbox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;DeletePermanentlyCheckbox.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="selectAllButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>584, 511</value>
+  </data>
+  <data name="selectAllButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 21</value>
+  </data>
+  <data name="selectAllButton.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="selectAllButton.Text" xml:space="preserve">
+    <value>Select all</value>
+  </data>
+  <data name="&gt;&gt;selectAllButton.Name" xml:space="preserve">
+    <value>selectAllButton</value>
+  </data>
+  <data name="&gt;&gt;selectAllButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;selectAllButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;selectAllButton.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="deselectAllButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>665, 511</value>
+  </data>
+  <data name="deselectAllButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 21</value>
+  </data>
+  <data name="deselectAllButton.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="deselectAllButton.Text" xml:space="preserve">
+    <value>Unselect all</value>
+  </data>
+  <data name="&gt;&gt;deselectAllButton.Name" xml:space="preserve">
+    <value>deselectAllButton</value>
+  </data>
+  <data name="&gt;&gt;deselectAllButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;deselectAllButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;deselectAllButton.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="filesSizeLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="filesSizeLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 511</value>
+  </data>
+  <data name="filesSizeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 12</value>
+  </data>
+  <data name="filesSizeLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="filesSizeLabel.Text" xml:space="preserve">
+    <value>Found: 0 MB</value>
+  </data>
+  <data name="&gt;&gt;filesSizeLabel.Name" xml:space="preserve">
+    <value>filesSizeLabel</value>
+  </data>
+  <data name="&gt;&gt;filesSizeLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;filesSizeLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;filesSizeLabel.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="forRemovalSizeLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="forRemovalSizeLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 523</value>
+  </data>
+  <data name="forRemovalSizeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 12</value>
+  </data>
+  <data name="forRemovalSizeLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="forRemovalSizeLabel.Text" xml:space="preserve">
+    <value>Selected for removal: 0MB</value>
+  </data>
+  <data name="&gt;&gt;forRemovalSizeLabel.Name" xml:space="preserve">
+    <value>forRemovalSizeLabel</value>
+  </data>
+  <data name="&gt;&gt;forRemovalSizeLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;forRemovalSizeLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;forRemovalSizeLabel.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="backgroundKeepCheckbox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="backgroundKeepCheckbox.Location" type="System.Drawing.Point, System.Drawing">
     <value>14, 45</value>
   </data>
-  <data name="&gt;&gt;findButton.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;moveCheckBox.Name" xml:space="preserve">
-    <value>moveCheckBox</value>
-  </data>
-  <data name="&gt;&gt;selectAllButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;forRemovalSizeLabel.Name" xml:space="preserve">
-    <value>forRemovalSizeLabel</value>
-  </data>
-  <data name="&gt;&gt;elementList.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;directoryPath.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="directoryLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 21</value>
-  </data>
-  <data name="&gt;&gt;backgroundReplaceCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="forRemovalSizeLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 12</value>
-  </data>
-  <data name="&gt;&gt;filesSizeLabel.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;backgroundKeepCheckbox.Name" xml:space="preserve">
-    <value>backgroundKeepCheckbox</value>
-  </data>
-  <data name="&gt;&gt;findButton.Name" xml:space="preserve">
-    <value>findButton</value>
-  </data>
-  <data name="&gt;&gt;DeletePermanentlyCheckbox.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="forRemovalSizeLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;backgroundReplaceCheckBox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;forRemovalSizeLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;deleteButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="directoryLabel.Text" xml:space="preserve">
-    <value>osu! directory path:</value>
-  </data>
-  <data name="filesSizeLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;FindProgressBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="selectAllButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 21</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 30</value>
-  </data>
-  <data name="&gt;&gt;elementList.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckedListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>MainApp</value>
-  </data>
-  <data name="&gt;&gt;findButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;filesSizeLabel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;findButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="cancelButton.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="&gt;&gt;elementList.ZOrder" xml:space="preserve">
-    <value>18</value>
-  </data>
-  <data name="&gt;&gt;directoryPath.Name" xml:space="preserve">
-    <value>directoryPath</value>
-  </data>
-  <data name="filesSizeLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="DeletePermanentlyCheckbox.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="FindProgressBar.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="cancelButton.Text" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="deleteButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>665, 543</value>
-  </data>
-  <data name="directoryPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>115, 6</value>
-  </data>
-  <data name="&gt;&gt;forRemovalSizeLabel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="deselectAllButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 21</value>
-  </data>
-  <data name="FindProgressBar.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="wavFileKeepCheckbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 16</value>
-  </data>
-  <data name="removeEmptyFolderCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="directoryPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>460, 21</value>
-  </data>
-  <data name="&gt;&gt;wavFileKeepCheckbox.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="filesSizeLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 511</value>
-  </data>
-  <data name="&gt;&gt;wavFileKeepCheckbox.Name" xml:space="preserve">
-    <value>wavFileKeepCheckbox</value>
-  </data>
-  <data name="moveCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 564</value>
+  <data name="backgroundKeepCheckbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 16</value>
   </data>
   <data name="backgroundKeepCheckbox.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
   </data>
-  <data name="&gt;&gt;removeEmptyFolderCheckBox.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="backgroundKeepCheckbox.Text" xml:space="preserve">
+    <value>Keep backgrounds</value>
   </data>
-  <data name="&gt;&gt;directoryLabel.Name" xml:space="preserve">
-    <value>directoryLabel</value>
+  <data name="&gt;&gt;backgroundKeepCheckbox.Name" xml:space="preserve">
+    <value>backgroundKeepCheckbox</value>
   </data>
-  <data name="&gt;&gt;selectAllButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="elementList.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="deleteButton.Text" xml:space="preserve">
-    <value>Delete</value>
-  </data>
-  <data name="&gt;&gt;directoryLabel.ZOrder" xml:space="preserve">
-    <value>17</value>
-  </data>
-  <data name="cancelButton.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;moveCheckBox.Type" xml:space="preserve">
+  <data name="&gt;&gt;backgroundKeepCheckbox.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="forRemovalSizeLabel.Text" xml:space="preserve">
-    <value>Selected for removal: 0MB</value>
-  </data>
-  <data name="&gt;&gt;deleteButton.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="wavFileKeepCheckbox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 89</value>
-  </data>
-  <data name="backgroundReplaceCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>43, 67</value>
-  </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="&gt;&gt;moveCheckBox.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="DeletePermanentlyCheckbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>329, 22</value>
-  </data>
-  <data name="deselectAllButton.Text" xml:space="preserve">
-    <value>Unselect all</value>
-  </data>
-  <data name="&gt;&gt;selectAllButton.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="backgroundReplaceCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="FindProgressBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>728, 21</value>
-  </data>
-  <data name="cancelButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>665, 106</value>
   </data>
   <data name="&gt;&gt;backgroundKeepCheckbox.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;directorySelectButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="backgroundKeepCheckbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 16</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="cancelButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 21</value>
-  </data>
-  <data name="selectAllButton.Text" xml:space="preserve">
-    <value>Select all</value>
-  </data>
-  <data name="forRemovalSizeLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 523</value>
-  </data>
-  <data name="&gt;&gt;FindProgressBar.Name" xml:space="preserve">
-    <value>FindProgressBar</value>
-  </data>
-  <data name="&gt;&gt;DeletePermanentlyCheckbox.Name" xml:space="preserve">
-    <value>DeletePermanentlyCheckbox</value>
-  </data>
-  <data name="findButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>581, 106</value>
-  </data>
-  <data name="&gt;&gt;deselectAllButton.Name" xml:space="preserve">
-    <value>deselectAllButton</value>
-  </data>
-  <data name="deselectAllButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>665, 511</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>347, 12</value>
-  </data>
-  <data name="&gt;&gt;DeletePermanentlyCheckbox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="removeEmptyFolderCheckBox.Text" xml:space="preserve">
-    <value>Remove empty folder</value>
-  </data>
-  <data name="FindProgressBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 472</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 12</value>
-  </data>
-  <data name="&gt;&gt;directoryPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Warning: Will delete all files except .osu and .mp3 files</value>
-  </data>
-  <data name="findButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 21</value>
-  </data>
-  <data name="&gt;&gt;DeletePermanentlyCheckbox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="findButton.Text" xml:space="preserve">
-    <value>Find</value>
-  </data>
-  <data name="&gt;&gt;filesSizeLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>752, 586</value>
-  </data>
-  <data name="&gt;&gt;cancelButton.Name" xml:space="preserve">
-    <value>cancelButton</value>
-  </data>
-  <data name="&gt;&gt;deleteButton.Name" xml:space="preserve">
-    <value>deleteButton</value>
-  </data>
-  <data name="&gt;&gt;deselectAllButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="moveCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="&gt;&gt;FindProgressBar.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="removeEmptyFolderCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="&gt;&gt;backgroundReplaceCheckBox.Name" xml:space="preserve">
-    <value>backgroundReplaceCheckBox</value>
-  </data>
-  <data name="filesSizeLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 12</value>
-  </data>
-  <data name="elementList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>728, 324</value>
-  </data>
-  <data name="removeEmptyFolderCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 16</value>
-  </data>
-  <data name="&gt;&gt;elementList.Name" xml:space="preserve">
-    <value>elementList</value>
-  </data>
-  <data name="&gt;&gt;selectAllButton.Name" xml:space="preserve">
-    <value>selectAllButton</value>
-  </data>
-  <data name="wavFileKeepCheckbox.Text" xml:space="preserve">
-    <value>Keep .wav files</value>
-  </data>
-  <data name="&gt;&gt;moveCheckBox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;backgroundReplaceCheckBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;deleteButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
   <data name="&gt;&gt;backgroundKeepCheckbox.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
-  <data name="forRemovalSizeLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;FindProgressBar.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="findButton.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="directoryPath.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;wavFileKeepCheckbox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;cancelButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="directorySelectButton.Text" xml:space="preserve">
-    <value>Browse</value>
-  </data>
-  <data name="&gt;&gt;removeEmptyFolderCheckBox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+  <data name="moveCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="backgroundReplaceCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 16</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="moveCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 564</value>
   </data>
   <data name="moveCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>246, 16</value>
   </data>
+  <data name="moveCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="moveCheckBox.Text" xml:space="preserve">
+    <value>Move to 'Cleaned' instead of removing</value>
+  </data>
+  <data name="&gt;&gt;moveCheckBox.Name" xml:space="preserve">
+    <value>moveCheckBox</value>
+  </data>
+  <data name="&gt;&gt;moveCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;moveCheckBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;moveCheckBox.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="wavFileKeepCheckbox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="wavFileKeepCheckbox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 67</value>
+  </data>
+  <data name="wavFileKeepCheckbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 16</value>
+  </data>
+  <data name="wavFileKeepCheckbox.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="wavFileKeepCheckbox.Text" xml:space="preserve">
+    <value>Keep .wav files</value>
+  </data>
+  <data name="&gt;&gt;wavFileKeepCheckbox.Name" xml:space="preserve">
+    <value>wavFileKeepCheckbox</value>
+  </data>
+  <data name="&gt;&gt;wavFileKeepCheckbox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;wavFileKeepCheckbox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;wavFileKeepCheckbox.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="FindProgressBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 472</value>
+  </data>
+  <data name="FindProgressBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>728, 21</value>
+  </data>
+  <data name="FindProgressBar.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="FindProgressBar.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;FindProgressBar.Name" xml:space="preserve">
+    <value>FindProgressBar</value>
+  </data>
+  <data name="&gt;&gt;FindProgressBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FindProgressBar.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;FindProgressBar.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="cancelButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>665, 106</value>
+  </data>
+  <data name="cancelButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 21</value>
+  </data>
+  <data name="cancelButton.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="cancelButton.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="cancelButton.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;cancelButton.Name" xml:space="preserve">
+    <value>cancelButton</value>
+  </data>
+  <data name="&gt;&gt;cancelButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cancelButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cancelButton.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="backgroundReplaceCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="backgroundReplaceCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>140, 45</value>
+  </data>
+  <data name="backgroundReplaceCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 16</value>
+  </data>
+  <data name="backgroundReplaceCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="backgroundReplaceCheckBox.Text" xml:space="preserve">
+    <value>Replace backgrounds</value>
+  </data>
+  <data name="&gt;&gt;backgroundReplaceCheckBox.Name" xml:space="preserve">
+    <value>backgroundReplaceCheckBox</value>
+  </data>
+  <data name="&gt;&gt;backgroundReplaceCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;backgroundReplaceCheckBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;backgroundReplaceCheckBox.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="removeEmptyFolderCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="removeEmptyFolderCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 89</value>
+  </data>
+  <data name="removeEmptyFolderCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 16</value>
+  </data>
+  <data name="removeEmptyFolderCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="removeEmptyFolderCheckBox.Text" xml:space="preserve">
+    <value>Remove empty folder</value>
+  </data>
+  <data name="&gt;&gt;removeEmptyFolderCheckBox.Name" xml:space="preserve">
+    <value>removeEmptyFolderCheckBox</value>
+  </data>
+  <data name="&gt;&gt;removeEmptyFolderCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;removeEmptyFolderCheckBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;removeEmptyFolderCheckBox.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 30</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>347, 12</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Warning: Will delete all files except .osu and .mp3 files</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 110</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 12</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Do not clean which creator is:</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="creatorsTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>203, 107</value>
+  </data>
+  <data name="creatorsTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>278, 21</value>
+  </data>
+  <data name="creatorsTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="creatorsTextBox.Text" xml:space="preserve">
+    <value>ExSPer,peppy</value>
+  </data>
+  <data name="&gt;&gt;creatorsTextBox.Name" xml:space="preserve">
+    <value>creatorsTextBox</value>
+  </data>
+  <data name="&gt;&gt;creatorsTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;creatorsTextBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;creatorsTextBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 12</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>752, 586</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>osu! Fully Cleaner v1.1</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>MainApp</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

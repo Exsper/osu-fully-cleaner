@@ -134,7 +134,7 @@
     <value>320, 22</value>
   </data>
   <data name="DeletePermanentlyCheckbox.Text" xml:space="preserve">
-    <value>永久删除而非移动到回收站</value>
+    <value>不移动到回收站，直接删除</value>
   </data>
   <data name="selectAllButton.Text" xml:space="preserve">
     <value>全选</value>
@@ -195,5 +195,8 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>osu! 谱面完全精简工具 v1.1</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Creator白名单：</value>
   </data>
 </root>

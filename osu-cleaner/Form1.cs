@@ -235,10 +235,13 @@ namespace osu_cleaner
             bool isKeepBG = backgroundKeepCheckbox.Checked;
             bool isReplaceBG = backgroundReplaceCheckBox.Checked;
             bool isKeepWav = wavFileKeepCheckbox.Checked;
+
+            List<string> whiteList = (creatorsTextBox.Text != "") ? creatorsTextBox.Text.Split(',').ToList() : null;
             foreach (string d in songsfolders)
             {
                 // skip the tooooo looonngggg file path
                 if (d.Length > 100) continue;
+                bool skip = false;
                 // get audio and BG
                 List<string> bgs = new List<string>();
                 List<string> audios = new List<string>();
@@ -246,10 +249,20 @@ namespace osu_cleaner
                 {
                     if (MatchSuffix(file, "osu"))
                     {
-                        bgs.Add(d + getBGPath(file));
-                        audios.Add(d + getAudioPath(file));
+                        string[] infos = readOsuFile(file);
+                        string audio = infos[0];
+                        string bg = infos[1];
+                        string creator = infos[2];
+                        if ((whiteList != null) && (whiteList.IndexOf(creator) >= 0))
+                        {
+                            skip = true;
+                            break;
+                        }
+                        bgs.Add(d + bg);
+                        audios.Add(d + audio);
                     }
                 }
+                if (skip) continue;
                 // add files to list
                 foreach (string file in Directory.GetFiles(d, "*", System.IO.SearchOption.AllDirectories))
                 {
@@ -320,48 +333,51 @@ namespace osu_cleaner
             }
         }
 
-        private string getBGPath(string path)
-        {
-            using (StreamReader file = File.OpenText(path))
-            {
-                string line;
-                while ((line = file.ReadLine()) != null)
-                {
-                    if (Regex.IsMatch(line, @"^\[Events\]"))
-                    {
-                        while ((line = file.ReadLine()) != null)
-                        {
-                            if (Regex.IsMatch(line, @"^\[TimingPoints\]")) return null;
-                            if (Regex.IsMatch(line, @"^0,"))
-                            {
-                                string[] items = line.Split(',');
-                                string tmp = "\\" + items[2].Replace("\"", string.Empty);
-                                return tmp;
-                            }
-                        }
-                    }
-                }
-                return null;
-            }
-        }
 
-        private string getAudioPath(string path)
+
+        private string[] readOsuFile(string path)
         {
             using (StreamReader file = File.OpenText(path))
             {
                 string line;
-                while ((line = file.ReadLine()) != null)
+                string audio = null;
+                string bg = null;
+                string creator = null;
+                while (((line = file.ReadLine()) != null) && (audio == null || bg == null || creator == null))
                 {
                     if (Regex.IsMatch(line, "^AudioFilename:"))
                     {
                         string[] items = line.Split(':');
-                        string tmp = "\\" + items[1].Trim();
-                        return tmp;
+                        audio = "\\" + items[1].Trim();
+                    }
+                    else if (Regex.IsMatch(line, "^Creator:"))
+                    {
+                        string[] items = line.Split(':');
+                        creator = items[1].Trim();
+                    }
+                    else if (Regex.IsMatch(line, @"^\[Events\]"))
+                    {
+                        while ((line = file.ReadLine()) != null)
+                        {
+                            if (Regex.IsMatch(line, @"^\[TimingPoints\]"))
+                            {
+                                string[] tmp2 = { audio, bg, creator };
+                                return tmp2;
+                            }
+                            if (Regex.IsMatch(line, @"^0,"))
+                            {
+                                string[] items = line.Split(',');
+                                bg = "\\" + items[2].Replace("\"", string.Empty);
+                            }
+                        }
                     }
                 }
-                return null;
+                string[] tmp = { audio, bg, creator };
+                return tmp;
+
             }
         }
+
 
         private long getFileSize(string path)
         {

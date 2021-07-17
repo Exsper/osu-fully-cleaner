@@ -48,13 +48,15 @@ namespace osu_cleaner
             this.backgroundReplaceCheckBox = new System.Windows.Forms.CheckBox();
             this.removeEmptyFolderCheckBox = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.creatorsTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // elementList
             // 
-            resources.ApplyResources(this.elementList, "elementList");
             this.elementList.CheckOnClick = true;
             this.elementList.FormattingEnabled = true;
+            resources.ApplyResources(this.elementList, "elementList");
             this.elementList.Name = "elementList";
             this.elementList.SelectedIndexChanged += new System.EventHandler(this.elementList_SelectedIndexChanged);
             // 
@@ -91,9 +93,9 @@ namespace osu_cleaner
             // 
             // DeletePermanentlyCheckbox
             // 
-            resources.ApplyResources(this.DeletePermanentlyCheckbox, "DeletePermanentlyCheckbox");
             this.DeletePermanentlyCheckbox.Checked = true;
             this.DeletePermanentlyCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
+            resources.ApplyResources(this.DeletePermanentlyCheckbox, "DeletePermanentlyCheckbox");
             this.DeletePermanentlyCheckbox.Name = "DeletePermanentlyCheckbox";
             this.DeletePermanentlyCheckbox.UseVisualStyleBackColor = true;
             this.DeletePermanentlyCheckbox.CheckedChanged += new System.EventHandler(this.DeletePermanentlyCheckbox_CheckedChanged);
@@ -175,10 +177,22 @@ namespace osu_cleaner
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
             // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.Name = "label2";
+            // 
+            // creatorsTextBox
+            // 
+            resources.ApplyResources(this.creatorsTextBox, "creatorsTextBox");
+            this.creatorsTextBox.Name = "creatorsTextBox";
+            // 
             // MainApp
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.creatorsTextBox);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.removeEmptyFolderCheckBox);
             this.Controls.Add(this.backgroundReplaceCheckBox);
@@ -225,6 +239,8 @@ namespace osu_cleaner
         private System.Windows.Forms.CheckBox backgroundReplaceCheckBox;
         private System.Windows.Forms.CheckBox removeEmptyFolderCheckBox;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox creatorsTextBox;
     }
 }
 
